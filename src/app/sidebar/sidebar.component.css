@@ -1,0 +1,11 @@
+mat-sideNav-container {
+    height: calc(100% - 64px)
+}
+
+mat-sideNav {
+    width: 200px;
+}
+
+mat-sideNav-content {
+    padding: 10px;
+}

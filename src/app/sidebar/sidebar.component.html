@@ -1,0 +1,21 @@
+<mat-sidenav-container>
+    <mat-sidenav mode="side" #drawer>
+        <mat-list>
+            <mat-list-item>
+                <mat-icon matListIcon>dashboard</mat-icon>
+                Dashboard1
+            </mat-list-item>
+            <mat-list-item>
+                    <mat-icon matListIcon>dashboard</mat-icon>
+                    Dashboard2
+                </mat-list-item>
+        </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>        
+        <button type="button" mat-button (click)="drawer.toggle()">
+            Toggle sidenav
+        </button>
+        
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
