@@ -1,1 +1,6 @@
-<mat-toolbar color="primary">{{title}}</mat-toolbar>
+<mat-toolbar color="primary">
+    <button mat-button (click) = "toggleSideNav()">
+        <mat-icon>view_headline</mat-icon>
+    </button>
+    <h3>{{title}}</h3>
+</mat-toolbar>

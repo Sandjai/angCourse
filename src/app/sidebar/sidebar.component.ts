@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, Output } from '@angular/core';
 import { MatSidenav } from '@angular/material';
-import { EventEmitter } from 'events';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -15,13 +15,8 @@ export class SidebarComponent implements OnInit {
   @ViewChild('drawer', {static: true})
   public drawer: MatSidenav;
 
-  constructor() { }
-
   ngOnInit() {
-    setTimeout(()=> {
-      this.drawer.toggle();
-
-    }, 5000);
+    this.setSideNavControl.emit(this.drawer);
   }
 
 }

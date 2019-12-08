@@ -1,2 +1,2 @@
-<app-header [title]="titleText"></app-header>
-<app-sidebar></app-sidebar>
+<app-header [title]="titleText" [drawer]="drawer"></app-header>
+<app-sidebar (setSideNavControl)="setSideNav($event)"></app-sidebar>
