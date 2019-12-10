@@ -1,2 +1,11 @@
 <app-header [title]="titleText" [drawer]="drawer"></app-header>
-<app-sidebar (setSideNavControl)="setSideNav($event)"></app-sidebar>
+<app-sidebar (setSideNavControl)="setSideNav($event)">
+    <div>content</div>
+        <div>
+            <div *ngFor="let product of products$ | async">
+                {{product.title}} {{product.price | currency: 'USD':'symbol'}}
+            </div>
+        </div>
+
+    
+</app-sidebar>

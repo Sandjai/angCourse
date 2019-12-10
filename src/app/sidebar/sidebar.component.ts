@@ -10,10 +10,11 @@ import { EventEmitter } from '@angular/core';
 export class SidebarComponent implements OnInit {
 
   @Output()
-  public setSideNavControl: EventEmitter<MatSidenav> = new EventEmitter<MatSidenav>();
+  public setSideNavControl: EventEmitter<MatSidenav> = new EventEmitter<MatSidenav>(true);  // - решение проблемы с event Loop №3 (лучшее - просто добавить isAsync = true)
 
   @ViewChild('drawer', {static: true})
   public drawer: MatSidenav;
+  
 
   ngOnInit() {
     this.setSideNavControl.emit(this.drawer);
