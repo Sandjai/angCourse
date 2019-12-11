@@ -12,27 +12,27 @@ export class AppComponent implements OnInit {
   public titleText = 'myApp v1';
   public drawer: MatSidenav;
   public products$: Observable<IProduct[]> = products$;
-  //public products: IProduct[]; // - добавили async pipe поэтому этот кусок не надо
+  // public products: IProduct[]; // - добавили async pipe поэтому этот кусок не надо
 
 
   public setSideNav(drawer: MatSidenav): void {
-    
-    //Promise.resolve().then(()=> { - решение проблемы с event Loop №1
+
+    // Promise.resolve().then(()=> { - решение проблемы с event Loop №1
       this.drawer = drawer;
       // this.cd.detectChanges(); - решение проблемы с event Loop №4
-    //}) - решение проблемы с event Loop №1
+    // }) - решение проблемы с event Loop №1
   }
 
 /*
   public constructor(private cd: ChangeDetectorRef) { //- решение проблемы с event Loop №4 (добавить в зависимости вверху ChangeDetectorRef из @angular/core)
-    
+
   }
 
   */
 
 
- public constructor() { 
-    
+ public constructor() {
+
  }
 
  ngOnInit(): void {
