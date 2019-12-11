@@ -2,14 +2,17 @@
 
 
 <mat-form-field class="products-search">
-    <input matInput type="text" placeholder="Search products">
+    <input matInput type="text" placeholder="Search products" (input)="search($event)">
   </mat-form-field>
+
+  <mat-checkbox (change)="toggleOnlyFavorites($event)">Show Favourite Only</mat-checkbox>
 
 <app-sidebar (setSideNavControl)="setSideNav($event)">
   <mat-grid-list cols="4" [rowHeight]="650" *ngIf="products$ | async as products; else loader">
-    <mat-grid-tile *ngFor="let product of products">
+    <mat-grid-tile *ngFor="let product of products | productsFilter:searchTerm:onlyFavorites">
       <mat-card>
           <mat-card-header>
+            <mat-icon matListIcon *ngIf="product.isFavorite">star</mat-icon>
               <mat-card-title>{{product.title}}</mat-card-title>
               <mat-card-subtitle>{{product.price | currency: 'USD'}}</mat-card-subtitle>
           </mat-card-header>

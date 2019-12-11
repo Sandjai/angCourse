@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { MatSidenav } from '@angular/material';
+import { MatSidenav, MatCheckboxChange } from '@angular/material';
 import { IProduct, products$ } from 'src/mock/products';
 import { Observable } from 'rxjs';
 
@@ -12,6 +12,8 @@ export class AppComponent implements OnInit {
   public titleText = 'myApp v1';
   public drawer: MatSidenav;
   public products$: Observable<IProduct[]> = products$;
+  public searchTerm: string;
+  public onlyFavorites: boolean;
   // public products: IProduct[]; // - добавили async pipe поэтому этот кусок не надо
 
 
@@ -29,6 +31,14 @@ export class AppComponent implements OnInit {
   }
 
   */
+
+  public search(event: Event) {
+    this.searchTerm = (event.target as HTMLInputElement).value;
+  }
+
+  public toggleOnlyFavorites(e: MatCheckboxChange): void {
+    this.onlyFavorites = e.checked;
+  }
 
 
  public constructor() {
